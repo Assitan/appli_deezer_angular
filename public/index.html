@@ -1,0 +1,38 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>Appli deezer angular</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <base href="/">
+  </head>
+  <body role="main" ng-app="MusikaApp" ng-controller="MainCtrl" ng-cloak>
+    <div class="container">
+         
+        <header>
+            <h1>Appli deezer angular</h1>
+        </header>
+
+        <section>
+            <input class="form-control" type="text" ng-model="query.name" placeholer="Chercher..">
+
+            <div id="result">
+                <ul class="nav">
+                    <li ng-repeat="el in videos | filter:query">
+                       {{el.id}} <br>
+                       {{el.title}} 
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>  
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/musicFactory.js"></script>
+</body>
+</html>
