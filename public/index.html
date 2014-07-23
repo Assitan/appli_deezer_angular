@@ -15,15 +15,30 @@
         </header>
 
         <section>
-            <input class="form-control" type="text" ng-model="query.name" placeholer="Chercher..">
+            <form ng-submit="searchMusic()">
+                <input class="form-control" type="text" ng-model="search.music" placeholder="Chercher..">
+                <button type="submit" class="btn btn-primary">Chercher</button>
+            </form>
+            
 
             <div id="result">
-                <ul class="nav">
-                    <li ng-repeat="el in videos | filter:query">
-                       {{el.id}} <br>
-                       {{el.title}} 
-                    </li>
-                </ul>
+                
+                <table class="table table-striped">
+                    <thead>
+                        <th>&nbsp;</th>
+                        <th>Titre</th>
+                        <th>Album</th>
+                        <th>Durée</th>
+                    </thead>
+                   
+                    <tr ng-repeat="artiste in artists">
+                        <!--<img ng-src="{{artiste.artist.picture}}" width="90" height="90" alt="{{artist.artist.name}}">-->
+                        <td>{{$index + 1}}</td>
+                        <td>{{artiste.title}}</td>
+                        <td>{{artiste.album.title}}</td>
+                        <td>{{artiste.duration}}</td>
+                    </tr>
+                </table>
             </div>
         </section>
 
@@ -31,6 +46,7 @@
 
     <script src="lib/jquery.min.js"></script>
     <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-resource.min.js"></script>
     <script src="js/app.js"></script>  
     <script src="js/mainCtrl.js"></script>
     <script src="js/musicFactory.js"></script>

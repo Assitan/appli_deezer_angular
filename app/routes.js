@@ -6,7 +6,7 @@
         // authentication routes
 
         // sample api route
-        app.get('/api/nerds', function(req, res) {
+        /*app.get('/api/nerds', function(req, res) {
             // use mongoose to get all nerds in the database
             Nerd.find(function(err, nerds) {
 
@@ -16,7 +16,7 @@
 
                 res.json(nerds); // return all nerds in JSON format
             });
-        });
+        });*/
 
         // route to handle creating (app.post)
         // route to handle delete (app.delete)
