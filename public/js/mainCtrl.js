@@ -20,7 +20,7 @@ app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope){
             }
         }).done(function(response){
            $scope.artists = response.data;
-           //console.log( response.data);
+           console.log( response.data);
   
             for (var i = 0; i < response.data.length; i++) {
                 duree = response.data[i].duration;

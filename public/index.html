@@ -18,8 +18,7 @@
             <form ng-submit="searchMusic()">
                 <input class="form-control" type="text" ng-model="search.music" placeholder="Chercher..">
                 <!--<button type="submit" class="btn btn-primary">Chercher</button>-->
-            </form>
-            
+            </form>       
 
             <div id="result">
                 
@@ -30,6 +29,7 @@
                         <th>Titre</th>
                         <th>Album</th>
                         <th>Durée</th>
+                        <th><span class="glyphicon glyphicon-play"></span></th>
                     </thead>
                    
                     <tr ng-repeat="artiste in artists">
@@ -39,6 +39,11 @@
                         <td>{{artiste.title}}</td>
                         <td>{{artiste.album.title}}</td>
                         <td>{{artiste.duration}}</td>
+                        <td><audio controls="controls">
+  
+  <source src="{{artiste.preview}}" type="audio/wav">
+</audio></td>
+
                     </tr>
                 </table>
             </div>
