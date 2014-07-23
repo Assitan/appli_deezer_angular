@@ -20,14 +20,14 @@ app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope){
             }
         }).done(function(response){
            $scope.artists = response.data;
-           console.log( response.data);
+           //console.log( response.data);
   
             for (var i = 0; i < response.data.length; i++) {
-                duree = response.data[i].duration
+                duree = response.data[i].duration;
                 minutes = duree/60;
                 min = minutes.toFixed(2).match(/\d+/g);
                 totalTime = min[0] + ':' + min[1];
-                response.data[i].duration = totalTime;;
+                response.data[i].duration = totalTime;
            };
         });
     };

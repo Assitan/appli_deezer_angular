@@ -17,7 +17,7 @@
         <section>
             <form ng-submit="searchMusic()">
                 <input class="form-control" type="text" ng-model="search.music" placeholder="Chercher..">
-                <button type="submit" class="btn btn-primary">Chercher</button>
+                <!--<button type="submit" class="btn btn-primary">Chercher</button>-->
             </form>
             
 
@@ -26,6 +26,7 @@
                 <table class="table table-striped">
                     <thead>
                         <th>&nbsp;</th>
+                        <th>Artiste</th>
                         <th>Titre</th>
                         <th>Album</th>
                         <th>Durée</th>
@@ -34,6 +35,7 @@
                     <tr ng-repeat="artiste in artists">
                         <!--<img ng-src="{{artiste.artist.picture}}" width="90" height="90" alt="{{artist.artist.name}}">-->
                         <td>{{$index + 1}}</td>
+                        <td>{{artiste.artist.name}}</td>
                         <td>{{artiste.title}}</td>
                         <td>{{artiste.album.title}}</td>
                         <td>{{artiste.duration}}</td>
