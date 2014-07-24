@@ -28,18 +28,20 @@
                         <th>Artiste</th>
                         <th>Titre</th>
                         <th>Album</th>
+                        <th>Cover</th>
                         <th>Durée</th>
                         <th><span class="glyphicon glyphicon-play"></span></th>
                     </thead>
                    
                     <tr ng-repeat="artiste in artists">
-                        <!--<img ng-src="{{artiste.artist.picture}}" width="90" height="90" alt="{{artist.artist.name}}">-->
+                        <!--<img ng-src="{{artiste.artist.picture}}" width="90" height="90" alt="{{artiste.artist.name}}">-->
                         <td>{{$index + 1}}</td>
                         <td>{{artiste.artist.name}}</td>
                         <td>{{artiste.title}}</td>
                         <td>{{artiste.album.title}}</td>
                         <td>{{artiste.duration}}</td>
-                        <td><audio controls="controls" poster="{{artiste.album.cover}}">
+                        <td><img src="{{artiste.album.cover}}" width="40" height="40" alt="{{artiste.album.title}}"></td>
+                        <td><audio controls="controls">
                             <source src="{{artiste.preview | trusted}}" type="audio/mp3">
                         </audio></td>         
 

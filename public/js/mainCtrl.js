@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope){
+app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope, musicFactory){
     $scope.artists = [];
 
     $scope.searchMusic = function() {
