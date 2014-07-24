@@ -33,16 +33,16 @@
                         <th>Preview</th>
                     </thead>
                    
-                    <tr ng-repeat="artiste in artists">
-                        <!--<img ng-src="{{artiste.artist.picture}}" width="90" height="90" alt="{{artiste.artist.name}}">-->
+                    <tr ng-repeat="artist in artists">
+                        <!--<img ng-src="{{artiste.artist.picture}}" width="90" height="90" alt="{{artist.artist.name}}">-->
                         <td>{{$index + 1}}</td>
-                        <td>{{artiste.artist.name}}</td>
-                        <td>{{artiste.title}}</td>
-                        <td>{{artiste.album.title}}</td>
-                        <td>{{artiste.duration}}</td>
-                        <td><img src="{{artiste.album.cover}}" width="40" height="40" alt="{{artiste.album.title}}"></td>
+                        <td>{{artist.artist.name}}</td>
+                        <td>{{artist.title}}</td>
+                        <td>{{artist.album.title}}</td>
+                        <td>{{artist.duration}}</td>
+                        <td><img src="{{artist.album.cover}}" width="40" height="40" alt="{{artist.album.title}}"></td>
                         <td><audio controls="controls">
-                            <source src="{{artiste.preview | trusted}}" type="audio/mp3">
+                            <source src="{{artist.preview | trusted}}" type="audio/mp3">
                         </audio></td>         
 
                     </tr>
