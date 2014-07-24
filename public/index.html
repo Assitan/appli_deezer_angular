@@ -39,10 +39,9 @@
                         <td>{{artiste.title}}</td>
                         <td>{{artiste.album.title}}</td>
                         <td>{{artiste.duration}}</td>
-                        <td><audio controls="controls">
-  
-  <source src="{{artiste.preview}}" type="audio/wav">
-</audio></td>
+                        <td><audio controls="controls" poster="{{artiste.album.cover}}">
+                            <source src="{{artiste.preview | trusted}}" type="audio/mp3">
+                        </audio></td>         
 
                     </tr>
                 </table>

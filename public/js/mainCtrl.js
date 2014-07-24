@@ -9,7 +9,8 @@ app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope){
         var min = 0;
         var totalTime = 0;
     //var search_artist = "https://api.deezer.com/search/artist/?q=" + $scope.search.music+ "&output=jsonp&callback=JSON_CALLBACK";
-        
+        if($scope.search.music.length < 3) return false;
+
         $.ajax({
             type: 'GET',
             dataType: 'jsonp',
@@ -20,7 +21,7 @@ app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope){
             }
         }).done(function(response){
            $scope.artists = response.data;
-           console.log( response.data);
+           console.log(response.data);
   
             for (var i = 0; i < response.data.length; i++) {
                 duree = response.data[i].duration;
@@ -28,10 +29,14 @@ app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope){
                 min = minutes.toFixed(2).match(/\d+/g);
                 totalTime = min[0] + ':' + min[1];
                 response.data[i].duration = totalTime;
-           };
+           }
         });
     };
 
-
+}])
+    .filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
 }]);
 
