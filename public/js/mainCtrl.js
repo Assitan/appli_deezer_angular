@@ -33,7 +33,7 @@ app.controller('MainCtrl', ['$scope', 'musicFactory',function ($scope, musicFact
         });
     };
 
-}])
+  }])//Pour l'url du preview
     .filter('trusted', ['$sce', function ($sce) {
     return function(url) {
         return $sce.trustAsResourceUrl(url);
